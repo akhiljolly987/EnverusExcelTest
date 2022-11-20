@@ -20,7 +20,7 @@ namespace Assignment.Rigcount
             using (var connection = new OleDbConnection(RigcountFileConnection()))
             {
                 connection.Open();
-                var query = string.Format("select * from WORLDWIDE RIG ROUND where Year between '2021' AND '2022.",Year);
+                var query = string.Format("select * from WORLDWIDE RIG ROUND where Year between '2021' AND '2022",Year);
                 var value = connection.Query<UserData>(query).FirstOrDefault();
                 connection.Close();
                 return value;
